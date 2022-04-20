@@ -11,12 +11,12 @@ public class Exercicio01 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] ordem = {"primeira", "segunda", "terceira", "quarta"};
-        double media = 0, notas = 0;
+        double notas = 0;
         for (int i = 0; i < 4; i++){
             System.out.print("Informe a " + ordem[i] + " nota: ");
             notas += scanner.nextDouble();
         }
-        media = notas / 4;
+        double media = notas / 4;
 
         if (media >= 7){
             System.out.println("O aluno foi aprovado!");
