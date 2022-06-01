@@ -47,7 +47,6 @@ public class VersusBoardGame extends BoardGame {
 
     @Override
     public void checkIfHaveAWinner() {
-        boolean haveAWinner = false;
             for (Player player : this.players) {
                 if (player.lifePoints <= 0) {
                     this.players.remove(player);
@@ -55,7 +54,7 @@ public class VersusBoardGame extends BoardGame {
                 }
             }
             if (this.players.size() == 1){
-                System.out.println("O jogador "+ this.players.get(0).id +" ganhou a partida");
+                System.out.println("The player "+ this.players.get(0).id +" won the game");
         }
     }
 }
