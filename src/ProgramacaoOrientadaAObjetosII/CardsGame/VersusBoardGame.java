@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class VersusBoardGame extends BoardGame {
 
-    private ArrayList<boolean[]> attackCardsField = new ArrayList<>(), specialAttackCardsField = new ArrayList<>();
+    private final int NUMBERS_OF_PLAYERS = 2, NUMBERS_OF_DECKS = 2, NUMBERS_OF_CARDS = 50, ATTACK_CARDS_FIELDS = 5,
+            SPECIAL_ATTACKS_CARDS_FIELDS = 2;
+    private ArrayList<boolean[]> attackCardsField = new ArrayList<>(NUMBERS_OF_PLAYERS), specialAttackCardsField = new ArrayList<>(NUMBERS_OF_PLAYERS);
 
     private ArrayList<Player> players = new ArrayList(2);
 
-    private final int NUMBERS_OF_PLAYERS = 2, NUMBERS_OF_DECKS = 2, NUMBERS_OF_CARDS = 50, ATTACK_CARDS_FIELDS = 5,
-            SPECIAL_ATTACKS_CARDS_FIELDS = 2;
 
     public VersusBoardGame() {
         for (int i = 0; i < NUMBERS_OF_PLAYERS; i++) {
@@ -48,7 +48,7 @@ public class VersusBoardGame extends BoardGame {
     @Override
     public void checkIfHaveAWinner() {
             for (Player player : this.players) {
-                if (player.lifePoints <= 0) {
+                if (player.getLifePoints() <= 0) {
                     this.players.remove(player);
                     break;
                 }

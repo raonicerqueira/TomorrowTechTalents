@@ -1,7 +1,7 @@
 package ProgramacaoOrientadaAObjetosII.CardsGame;
 
 public class Player {
-    int lifePoints;
+    private int lifePoints;
     int id;
 
     public Player(int id) {
