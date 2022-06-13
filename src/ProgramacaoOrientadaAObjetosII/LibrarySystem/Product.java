@@ -2,6 +2,7 @@ package ProgramacaoOrientadaAObjetosII.LibrarySystem;
 
 public abstract class Product implements IProduct {
     protected String name;
+    private static int idGenerator;
     protected int id;
     protected double price;
     protected int quantityInventory;
@@ -9,9 +10,9 @@ public abstract class Product implements IProduct {
     public Product() {
     }
 
-    protected Product(String name, int id, double price, int quantityInventory) {
+    protected Product(String name, double price, int quantityInventory) {
         this.name = name;
-        this.id = id;
+        this.id = idGenerator++;
         this.price = price;
         this.quantityInventory = quantityInventory;
     }
@@ -54,7 +55,7 @@ public abstract class Product implements IProduct {
         this.quantityInventory = quantityInventory;
     }
 
-    public String getData (){
+    public String getData() {
         String data = "";
         data += "Name: " + this.name + " \n";
         data += "Id: " + this.id + " \n";

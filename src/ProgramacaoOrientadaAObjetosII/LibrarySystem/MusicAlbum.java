@@ -10,8 +10,8 @@ public class MusicAlbum extends Product{
     public MusicAlbum() {
     }
 
-    public MusicAlbum(String name, int id, double price, int quantityInventory, ArrayList<String> musiciansAndBands, ArrayList<String> genre, ArrayList<String> labels) {
-        super(name, id, price, quantityInventory);
+    public MusicAlbum(String name, double price, int quantityInventory, ArrayList<String> musiciansAndBands, ArrayList<String> genre, ArrayList<String> labels) {
+        super(name, price, quantityInventory);
         this.musiciansAndBands = musiciansAndBands;
         this.genre = genre;
         this.labels = labels;

@@ -11,8 +11,8 @@ public class Movie extends Product{
     public Movie() {
     }
 
-    public Movie(String name, int id, double price, int quantityInventory, String studio, String directors, ArrayList<String> genres, ArrayList<String> productionCompanies) {
-        super(name, id, price, quantityInventory);
+    public Movie(String name, double price, int quantityInventory, String studio, String directors, ArrayList<String> genres, ArrayList<String> productionCompanies) {
+        super(name, price, quantityInventory);
         this.studio = studio;
         this.directors = directors;
         this.genres = genres;

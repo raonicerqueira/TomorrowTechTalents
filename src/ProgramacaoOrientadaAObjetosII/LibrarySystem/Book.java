@@ -10,8 +10,8 @@ public class Book extends Product {
     public Book() {
     }
 
-    public Book(String name, int id, double price, int quantityInventory, ArrayList<String> genres, String writer, String publisher) {
-        super(name, id, price, quantityInventory);
+    public Book(String name, double price, int quantityInventory, ArrayList<String> genres, String writer, String publisher) {
+        super(name, price, quantityInventory);
         this.genres = genres;
         this.writer = writer;
         this.publisher = publisher;

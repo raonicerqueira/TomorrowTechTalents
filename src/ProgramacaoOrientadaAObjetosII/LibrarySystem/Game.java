@@ -8,8 +8,8 @@ public class Game extends Product {
     public Game() {
     }
 
-    public Game(String name, int id, double price, int quantityInventory, String distributor, String genre, String studio) {
-        super(name, id, price, quantityInventory);
+    public Game(String name, double price, int quantityInventory, String distributor, String genre, String studio) {
+        super(name, price, quantityInventory);
         this.distributor = distributor;
         this.genre = genre;
         Studio = studio;

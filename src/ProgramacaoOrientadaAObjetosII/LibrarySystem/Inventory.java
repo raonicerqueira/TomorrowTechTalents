@@ -1,7 +1,6 @@
 package ProgramacaoOrientadaAObjetosII.LibrarySystem;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Inventory<T extends Product> {
     public ArrayList<Product> inventory;

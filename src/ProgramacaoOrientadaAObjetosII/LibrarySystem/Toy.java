@@ -6,8 +6,8 @@ public class Toy extends Product{
     public Toy() {
     }
 
-    public Toy(String name, int id, double price, int quantityInventory, String type) {
-        super(name, id, price, quantityInventory);
+    public Toy(String name, double price, int quantityInventory, String type) {
+        super(name, price, quantityInventory);
         this.type = type;
     }
 }
