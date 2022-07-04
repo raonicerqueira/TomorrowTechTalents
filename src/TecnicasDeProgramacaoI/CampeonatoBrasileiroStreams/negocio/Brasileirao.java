@@ -18,6 +18,7 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Brasileirao {
 
@@ -90,15 +91,28 @@ public class Brasileirao {
     }
 
     public Map<Resultado, Long> todosOsPlacares() {
-        return null;
+        List<Resultado> resultados = jogos.stream()
+                .map(jogo -> new Resultado(jogo.mandantePlacar(), jogo.visitantePlacar()))
+                .toList();
+
+        return resultados.stream()
+                .collect(Collectors.toMap(
+                        Function.identity(),
+                        resultado -> (long) Collections.frequency(resultados, resultado),
+                        (a, b) -> a
+                ));
     }
 
     public Map.Entry<Resultado, Long> placarMaisRepetido() {
-        return null;
+        Optional<Map.Entry<Resultado, Long>> maxPlacaresRepetidos = todosOsPlacares().entrySet().stream()
+                .max(Map.Entry.comparingByValue());
+        return maxPlacaresRepetidos.orElseThrow();
     }
 
     public Map.Entry<Resultado, Long> placarMenosRepetido() {
-        return null;
+        Optional<Map.Entry<Resultado, Long>> minPlacarRepetido = todosOsPlacares().entrySet().stream()
+                .min(Map.Entry.comparingByValue());
+        return minPlacarRepetido.orElseThrow();
     }
 
     private List<Time> todosOsTimes() {
@@ -112,7 +126,11 @@ public class Brasileirao {
                 .map(Jogo::visitante)
                 .toList();
 
-        return null;
+        return Stream.of(mandantes, visitantes)
+                .flatMap(List::stream)
+                .collect(Collectors.toSet())
+                .stream()
+                .toList();
     }
 
     /**
@@ -121,7 +139,8 @@ public class Brasileirao {
      * @return Map<Time, List < Jogo>>
      */
     private Map<Time, List<Jogo>> todosOsJogosPorTimeComoMandantes() {
-        return null;
+        return jogos.stream()
+                .collect(Collectors.groupingBy(Jogo::mandante));
     }
 
     /**
@@ -130,7 +149,8 @@ public class Brasileirao {
      * @return Map<Time, List < Jogo>>
      */
     private Map<Time, List<Jogo>> todosOsJogosPorTimeComoVisitante() {
-        return null;
+        return jogos.stream()
+                .collect(Collectors.groupingBy(Jogo::visitante));
     }
 
     public Map<Time, List<Jogo>> todosOsJogosPorTime() {
