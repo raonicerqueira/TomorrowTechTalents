@@ -57,6 +57,7 @@ public abstract class Product implements IProduct {
 
     public String getData() {
         String data = "";
+
         data += "Name: " + this.name + " \n";
         data += "Id: " + this.id + " \n";
         data += "Price: " + this.price + " \n";

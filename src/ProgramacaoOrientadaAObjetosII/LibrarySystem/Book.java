@@ -16,4 +16,5 @@ public class Book extends Product {
         this.writer = writer;
         this.publisher = publisher;
     }
+
 }

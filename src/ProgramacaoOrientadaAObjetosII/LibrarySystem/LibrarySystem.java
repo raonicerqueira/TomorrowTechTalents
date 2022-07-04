@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class LibrarySystem {
-    static Inventory estoque = new Inventory<>();
+    static Inventory estoque = new Inventory();
     static Cashier caixa = new Cashier(100);
 
     public static void main(String[] args) {

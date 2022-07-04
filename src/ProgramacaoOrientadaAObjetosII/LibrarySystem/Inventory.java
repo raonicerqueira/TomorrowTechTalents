@@ -2,7 +2,7 @@ package ProgramacaoOrientadaAObjetosII.LibrarySystem;
 
 import java.util.ArrayList;
 
-public class Inventory<T extends Product> {
+public class Inventory implements IInventoryManager {
     public ArrayList<Product> inventory;
 
     public Inventory() {
